@@ -641,6 +641,19 @@ va calcula şi afişa aria, altfel perimetrul.");
         {
             Console.WriteLine(@"20. Se citeşte un şir de numere întregi pâna la întâlnirea numărului 0. Să se calculeze media 
 aritmetică a numerelor din şir.");
+            double sum = 0;
+            double b = 1;
+            int nr = 0;
+            while(b!=0)
+            {
+                b = int.Parse(Console.ReadLine());
+                if (b != 0)
+                {
+                    sum += b;
+                    nr++;
+                }
+            }
+            Console.WriteLine($"Media aritmetica este {sum/nr}");
         }
 
         private static void Problema21()
