@@ -394,6 +394,23 @@ suma divizorilor numărului y.Să se găsească numerele ""prietene"" din interv
         private static void Problema7()
         {
             Console.WriteLine(@"7. Fie n,k. Să se scrie un algoritm pentru calculul numărului combinărilor de n elemente luate câte k");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("k=");
+            int k = int.Parse(Console.ReadLine());
+            int comb = 0;
+            comb = fact(n)/(fact(k)*fact(n-k));
+            Console.WriteLine($"Exista {comb} combinari ne {n} elemente luate cate {k}");
+        }
+
+        private static int fact(int n)
+        {
+            int rez = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                rez *= i;
+            }
+            return rez;
         }
 
         private static void Problema8()
