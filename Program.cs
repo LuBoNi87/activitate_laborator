@@ -561,6 +561,11 @@ determine cel mai mic număr şi cel mai mare număr citit.");
         private static void Problema16()
         {
             Console.WriteLine(@"16. O carte are n foi şi r rânduri pe fiecare pagină. Câte rânduri are cartea?");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("r=");
+            int r = int.Parse(Console.ReadLine());
+            Console.WriteLine($"{n*r}");
         }
 
         private static void Problema17()
@@ -568,6 +573,16 @@ determine cel mai mic număr şi cel mai mare număr citit.");
             Console.WriteLine(@"17. Un punct material se află la distanţa x0 de origine, la momentul iniţial t0, când începe să se 
 mişte rectiliniu uniform. Çtiind că la momentul t se află la distanţa x faţă de origine, să se 
 determine viteza v de mişcare a punctului material, la momentul t.");
+            Console.Write("x0=");
+            double x0 = int.Parse(Console.ReadLine());
+            Console.Write("t0=");
+            double t0 = int.Parse(Console.ReadLine());
+            Console.Write("x=");
+            double x = int.Parse(Console.ReadLine());
+            Console.Write("t=");
+            double t = int.Parse(Console.ReadLine());
+            double v = (x - x0) / (t - t0);
+            Console.WriteLine($"Viteza este {v}");
         }
 
         private static void Problema18()
