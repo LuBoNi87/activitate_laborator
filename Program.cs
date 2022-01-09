@@ -696,6 +696,21 @@ aritmetică a numerelor din şir.");
         {
             Console.WriteLine(@"23. Efectuaţi împărţirea întreagă a două numere, făra a utiliza operatorii / şi %, ci doar scăderi 
 repetate.");
+            Console.Write("a=");
+            double a = int.Parse(Console.ReadLine());
+            Console.Write("b=");
+            double b = int.Parse(Console.ReadLine());
+            int nr = 0;
+            while(a>0)
+            {
+                if(a-b>=0)
+                {
+                    a -= b;
+                    nr++;
+                }
+                else a -= b;
+            }
+            Console.WriteLine($"{nr}");
         }
 
         private static void Problema24()
