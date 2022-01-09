@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Media;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -592,9 +593,24 @@ determine viteza v de mişcare a punctului material, la momentul t.");
 răspunde prin 1, se va calcula şi afişa media aritmetică, iar pentru 2 media geometrică (numai 
 dacă numerele sunt pozitive !, iar de nu, se va afişa ‘eroare !’). Dacă nu se răspunde prin 1 
 sau 2 se va produce un sunet în difuzor.");
+            Console.Write("a=");
+            double a = int.Parse(Console.ReadLine());
+            Console.Write("b=");
+            double b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ce doriţi să calculăm ? Media aritmetică (1) sau geometrică (2)?");
+            string ce = Console.ReadLine();
+            if (ce != "1" && ce != "2" && a>=0 && b>=0)
+            {
+                SystemSounds.Asterisk.Play();
+                Console.WriteLine("eroare !");
+            }
+            else if(ce == "1")
+                Console.WriteLine($"Media aritmetica este {a+b/2}");
+            else if(ce == "2")
+                Console.WriteLine($"Media geometrica este {Math.Sqrt(a*b)}");
         }
 
-        private static void Problema19()
+            private static void Problema19()
         {
             Console.WriteLine(@"19. Să se scrie un program care să citească trei numere reale a, b şi c, apoi să pună o întrebare de 
 genul: Ce doriţi să calculăm? Aria sau perimetrul?. Dacă se va răspunde prin ‘aria’ atunci se 
