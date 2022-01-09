@@ -730,7 +730,19 @@ repetate.");
         private static void Problema25()
         {
             Console.WriteLine(@"24. Se citeşte un număr natural. Câte cifre conţine ?");
-
+            Console.Write("a=");
+            int a = int.Parse(Console.ReadLine());
+            int ca = a;
+            int o = 0;
+            while(a>0)
+            {
+                o = o * 10 + a % 10;
+                a /= 10;
+            }
+            if(o==ca)
+                Console.WriteLine("Numarul este palindrom");
+            else
+                Console.WriteLine("Numarul nu este palindrom");
         }
 
         private static void Problema26()
