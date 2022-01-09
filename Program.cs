@@ -716,11 +716,21 @@ repetate.");
         private static void Problema24()
         {
             Console.WriteLine(@"24. Se citeşte un număr natural. Câte cifre conţine ?");
+            Console.Write("a=");
+            int a = int.Parse(Console.ReadLine());
+            int nr = 0;
+            while(a>0)
+            {
+                nr++;
+                a /= 10;
+            }
+            Console.WriteLine($"{nr}");
         }
 
         private static void Problema25()
         {
             Console.WriteLine(@"24. Se citeşte un număr natural. Câte cifre conţine ?");
+
         }
 
         private static void Problema26()
