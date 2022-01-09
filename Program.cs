@@ -417,12 +417,51 @@ suma divizorilor numărului y.Să se găsească numerele ""prietene"" din interv
         {
             Console.WriteLine(@"8. Fie a. Să se scrie un algoritm pentru calculul mediei aritmetice, geometrice şi armonice a 
 tuturor divizorilor lui a.");
+            Console.Write("a=");
+            int a = int.Parse(Console.ReadLine());
+            double ma = 1;
+            double mg = 1;
+            double mh = 1;
+            for (int i = 2; i <= a; i++)
+            {
+                if(a%i==0)
+                {
+                    ma = (ma + i) / 2;
+                    mg = Math.Sqrt(mg * i);
+                    mh = (2 * mh * i) / (mh + i);
+                }
+            }
+            Console.WriteLine($"Media aritmetica este {ma}");
+            Console.WriteLine($"Media geometrica este {mg}");
+            Console.WriteLine($"Media armonica este {mh}");
         }
 
         private static void Problema9()
         {
             Console.WriteLine(@"9. Să se determine cel mai mare divizor comun şi cel mai mic multiplu comun pentru două 
 numere întregi aşi b.");
+            Console.Write("a=");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write("b=");
+            int b = int.Parse(Console.ReadLine());
+            int ca = a;
+            int cb = b;
+            while(a!=b)
+            {
+                if (a < b)
+                    a += ca;
+                if (b < a)
+                    b += cb;
+            }
+            while(ca != cb)
+            {
+                if (ca > cb)
+                    ca -= cb;
+                if (ca < cb)
+                    cb -= ca;
+            }
+            Console.WriteLine($"Cel mai mare divizor comun este: {ca}");
+            Console.WriteLine($"Cel mai mic multiplu comun este: {a}");
         }
 
         private static void Problema10()
