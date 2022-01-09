@@ -315,11 +315,27 @@ ceară utilizatorului introducerea datelor necesare, respectiv, în cazul adună
         private static void Problema3()
         {
             Console.WriteLine(@"3. Fie i,j,k. Să se determine restul împărţirii numărului natural ij la k.");
+            Console.WriteLine("Citeste numerele:");
+            int i = int.Parse(Console.ReadLine());
+            int j = int.Parse(Console.ReadLine());
+            int k = int.Parse(Console.ReadLine());
+            double a = Math.Pow(i, j);
+            Console.WriteLine($"Restul impartirii lui {i}^{j} la {k} este {a%k}");
         }
 
         private static void Problema4()
         {
             Console.WriteLine(@"4. Să se verifice dacă numărul n este perfect. (Un număr n este perfect dacă este egal cu suma divizorilor lui diferiţi de n; exemplu: 6=1+2+3)");
+            Console.WriteLine("n=");
+            int n= int.Parse(Console.ReadLine());
+            int sum = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if (n % i == 0)
+                    sum += i;
+            }
+            if(sum==n)
+                Console.WriteLine($"Numarul {n} este perfect");
         }
 
         private static void Problema5()
