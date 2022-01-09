@@ -467,11 +467,43 @@ numere întregi aşi b.");
         private static void Problema10()
         {
             Console.WriteLine(@"10. Să se afişeze primele n numere prime.");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            int[] prime = new int[n+1];
+            for (int i = 2; i <= n; i = i + 2)
+                prime[i] = 1;
+            if(n>=2)
+                Console.Write("2");
+            for (int i = 3; i <= n; i = i + 2)
+            {
+                if(prime[i]==0)
+                    Console.Write($" {i}");
+                for (int j = 2 * i; j <= n; j = j + i)
+                prime[j] = 1;
+            }
+            Console.WriteLine();
         }
 
         private static void Problema11()
         {
             Console.WriteLine(@"11. Să se determine dacă două numere sunt prime între ele sau nu.");
+            Console.Write("a=");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write("b=");
+            int b = int.Parse(Console.ReadLine());
+            int ca = a;
+            int cb = b;
+            while (ca != cb)
+            {
+                if (ca > cb)
+                    ca -= cb;
+                if (ca < cb)
+                    cb -= ca;
+            }
+            if(ca==1)
+                Console.WriteLine("Numerele sunt prime intre ele");
+            else
+                Console.WriteLine("Numerele nu sunt prime intre ele");
         }
 
         private static void Problema12()
@@ -479,11 +511,24 @@ numere întregi aşi b.");
             Console.WriteLine(@"12. Elaboraţi un program care să tipărească tabela de temperaturi Fahrenheit şi echivalenţele lor 
 în centigrade sau grade Celsius, folosind formula: C=(5/9)*(F-32), între valorile extreme 0 şi 
 300 grade Fahrenheit.");
+            Console.WriteLine("F   C");
+            double nr = (double)5/9;
+            for(int i=0; i<=300; i++)
+            {
+                double grade = nr * (i - 32);
+                Console.WriteLine($"{i}   {grade}");
+            }
         }
 
         private static void Problema13()
         {
             Console.WriteLine(@"13. Elaboraţi un program care să tipărească tabela corespunzătoare Celsius-Fahrenheit.");
+            Console.WriteLine("C   F");
+            for (int i = 0; i <= 300; i++)
+            {
+                double grade = i * 1.8 + 32;
+                Console.WriteLine($"{i}   {grade}");
+            }
         }
 
         private static void Problema14()
