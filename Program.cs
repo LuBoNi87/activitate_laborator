@@ -270,7 +270,46 @@ adunare, scădere, înmulțire, împărțire, radical, modulul. (Ulilizați oper
 selectarea funcției calculatorului.). După selectarea opțiunii dorite, programul trebuie să 
 ceară utilizatorului introducerea datelor necesare, respectiv, în cazul adunării, scăderii, 
 înmulțirii și împărțirii, două numere, iar în cazul radicalului și modulului, un singur număr.");
-            
+            string operatia = "";
+            int a = 0, b = 0;
+            while(operatia != "x")
+            {
+                Console.WriteLine(@"Operatia (""x"" - pentru a iesi) :");
+                operatia = Console.ReadLine();
+                switch (operatia)
+                {
+                    case "adunare":
+                        a = int.Parse(Console.ReadLine());
+                        b = int.Parse(Console.ReadLine());
+                        Console.WriteLine($"{a+b}");
+                        break;
+                    case "scadere":
+                        a = int.Parse(Console.ReadLine());
+                        b = int.Parse(Console.ReadLine());
+                        Console.WriteLine($"{a-b}");
+                        break;
+                    case "inmultire":
+                        a = int.Parse(Console.ReadLine());
+                        b = int.Parse(Console.ReadLine());
+                        Console.WriteLine($"{a * b}");
+                        break;
+                    case "impartire":
+                        a = int.Parse(Console.ReadLine());
+                        b = int.Parse(Console.ReadLine());
+                        Console.WriteLine($"{(double)a / b}");
+                        break;
+                    case "radical":
+                        a = int.Parse(Console.ReadLine());
+                        Console.WriteLine($"{Math.Sqrt(a)}");
+                        break;
+                    case "modul":
+                        a = int.Parse(Console.ReadLine());
+                        Console.WriteLine($"{Math.Abs(a)}");
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
 
         private static void Problema3()
