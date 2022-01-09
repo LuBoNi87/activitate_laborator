@@ -315,7 +315,7 @@ ceară utilizatorului introducerea datelor necesare, respectiv, în cazul adună
         private static void Problema3()
         {
             Console.WriteLine(@"3. Fie i,j,k. Să se determine restul împărţirii numărului natural ij la k.");
-            Console.WriteLine("Citeste numerele:");
+            Console.Write("Citeste numerele:");
             int i = int.Parse(Console.ReadLine());
             int j = int.Parse(Console.ReadLine());
             int k = int.Parse(Console.ReadLine());
@@ -326,10 +326,10 @@ ceară utilizatorului introducerea datelor necesare, respectiv, în cazul adună
         private static void Problema4()
         {
             Console.WriteLine(@"4. Să se verifice dacă numărul n este perfect. (Un număr n este perfect dacă este egal cu suma divizorilor lui diferiţi de n; exemplu: 6=1+2+3)");
-            Console.WriteLine("n=");
+            Console.Write("n=");
             int n= int.Parse(Console.ReadLine());
             int sum = 0;
-            for (int i = 0; i < n; i++)
+            for (int i = 1; i <= n/2; i++)
             {
                 if (n % i == 0)
                     sum += i;
@@ -341,12 +341,54 @@ ceară utilizatorului introducerea datelor necesare, respectiv, în cazul adună
         private static void Problema5()
         {
             Console.WriteLine(@"5. Să se determine numerele perfecte din intervalul [a,b], pentru a,b date.");
+            Console.Write("a=");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write("b=");
+            int b = int.Parse(Console.ReadLine());
+            int sum = 0;
+            for (int j = a; j <= b; j++)
+            {
+                sum = 0;
+                for (int i = 1; i <= j/2; i++)
+                {
+                    if (j % i == 0)
+                        sum += i;
+                }
+                if (sum == j)
+                    Console.WriteLine($"{j} ");
+            }
         }
 
         private static void Problema6()
         {
             Console.WriteLine(@"6. Două numere întregi x şi y sunt ""prietene"" dacă suma divizorilor numărului x este egală cu 
 suma divizorilor numărului y.Să se găsească numerele ""prietene"" din intervalul[a, b].");
+            Console.Write("a=");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write("b=");
+            int b = int.Parse(Console.ReadLine());
+            int sum1 = 0, sum2 = 0;
+            for (int i = a; i < b; i++)
+            {
+                sum1 = 0;
+                for (int j = 1; j <= i; j++)
+                {
+                    if (i % j == 0)
+                        sum1 += j;
+                }
+                for (int j = i+1; j <= b; j++)
+                {
+                    sum2 = 0;
+                    for (int k = 1; k <= j; k++)
+                    {
+                        if (j % k == 0)
+                            sum2 += k;
+                    }
+                    if(sum1 == sum2)
+                        Console.Write($"[{i},{j}] ");
+                }
+            }
+            Console.WriteLine();
         }
 
         private static void Problema7()
