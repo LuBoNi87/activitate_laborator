@@ -535,6 +535,19 @@ numere întregi aşi b.");
         {
             Console.WriteLine(@"14. Scrieţi un program care să citească mai multe numere întregi, până la întâlnirea lui zero, şi să 
 determine cel mai mic număr şi cel mai mare număr citit.");
+            int mx = 0;
+            int mn = 100900000;
+            int nr = 1;
+            while(nr!=0)
+            {
+                nr = int.Parse(Console.ReadLine());
+                if (nr > mx)
+                    mx = nr;
+                if (nr < mn)
+                    mn = nr;
+            }
+            Console.WriteLine($"Cel mai mic numar este {mn}");
+            Console.WriteLine($"Cel mai mare numar este {mx}");
         }
 
         private static void Problema15()
