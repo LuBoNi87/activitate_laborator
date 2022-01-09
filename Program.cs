@@ -615,6 +615,26 @@ sau 2 se va produce un sunet în difuzor.");
             Console.WriteLine(@"19. Să se scrie un program care să citească trei numere reale a, b şi c, apoi să pună o întrebare de 
 genul: Ce doriţi să calculăm? Aria sau perimetrul?. Dacă se va răspunde prin ‘aria’ atunci se 
 va calcula şi afişa aria, altfel perimetrul.");
+            Console.Write("a=");
+            double a = int.Parse(Console.ReadLine());
+            Console.Write("b=");
+            double b = int.Parse(Console.ReadLine());
+            Console.Write("c=");
+            double c = int.Parse(Console.ReadLine());
+            Console.WriteLine(" Ce doriţi să calculăm? Aria sau perimetrul?");
+            string ce = Console.ReadLine();
+            if (ce != "aria" && ce != "perimetrul" && a > 0 && b > 0 && c > 0)
+            {
+                SystemSounds.Asterisk.Play();
+                Console.WriteLine("eroare !");
+            }
+            else if (ce == "aria")
+            {
+                double p = (a + b + c) / 2;
+                Console.WriteLine($"Aria este {Math.Sqrt(p*(p-a)*(p-b)*(p-c))}");
+            }
+            else if (ce == "perimetrul")
+                Console.WriteLine($"Perimetrul este {a + b + c}");
         }
 
         private static void Problema20()
