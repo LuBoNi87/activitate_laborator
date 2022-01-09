@@ -660,11 +660,36 @@ aritmetică a numerelor din şir.");
         {
             Console.WriteLine(@"21. Se citesc 3 numere naturale n, p şi k, apoi un şir de n numere naturale. Câte dintre acestea, 
 împărţite la p dau restul k ?");
+            Console.Write("n=");
+            double n = int.Parse(Console.ReadLine());
+            Console.Write("p=");
+            double p = int.Parse(Console.ReadLine());
+            Console.Write("k=");
+            double k = int.Parse(Console.ReadLine());
+            int x = 0;
+            int nr= 0;
+            for (int i = 0; i < n; i++)
+            {
+                x = int.Parse(Console.ReadLine());
+                if (x % p == k)
+                    nr++;
+            }
+            Console.WriteLine($"{nr} numere dau restul {k}");
         }
 
         private static void Problema22()
         {
             Console.WriteLine(@"22. Să se calculeze produsul a două numere naturale prin adunări repetate.");
+            Console.Write("a=");
+            double a = int.Parse(Console.ReadLine());
+            Console.Write("b=");
+            double b = int.Parse(Console.ReadLine());
+            double ca = a;
+            for (int i = 1; i < b; i++)
+            {
+                a += ca;
+            }
+            Console.WriteLine($"{a}");
         }
 
         private static void Problema23()
