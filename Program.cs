@@ -553,6 +553,9 @@ determine cel mai mic număr şi cel mai mare număr citit.");
         private static void Problema15()
         {
             Console.WriteLine(@"15. Scrieţi un program care să calculeze factorialul unui număr întreg n.");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine($"{fact(n)}");
         }
 
         private static void Problema16()
