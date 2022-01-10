@@ -1081,7 +1081,7 @@ minute şi secunde.");
                     Console.Write($"{date3[0]} ore {date3[1]} minute {date3[2]} secunde");
             Console.WriteLine();
         }
-
+        
         private static void Problema40()
         {
             Console.WriteLine(@"40. Viteza unui automobil este de v km/h. Scrieti o functie prin care sa exprimaţi această viteză 
@@ -1101,11 +1101,33 @@ minute şi secunde.");
         {
             Console.WriteLine(@"41. Un muncitor lucrează n zile pentru a termina o lucrare. Scrieti o functie prin care sa se 
 determine câte zile sunt necesare pentru a termina aceeaşi lucrare o echipă de mmuncitori.");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("m=");
+            int m = int.Parse(Console.ReadLine());
+            float zile = (float)n / m;
+            Console.WriteLine($"{zile} zile");
         }
 
         private static void Problema42()
         {
             Console.WriteLine(@"42. Scrieti o functie care să se verifice dacă un număr natural este sau nu cub perfect.");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            isCub(n);
+        }
+
+        private static void isCub(int n)
+        {
+            bool ok = false;
+            for (int i = 1; i <= Math.Sqrt(n); i++)
+            {
+                if (i * i * i == n)
+                    ok = true;
+            }
+            if(ok)
+                Console.WriteLine("Este cub perfect");
+            else Console.WriteLine("Nu este cub perfect");
         }
 
         private static void Problema43()
