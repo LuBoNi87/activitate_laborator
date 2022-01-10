@@ -1086,6 +1086,15 @@ minute şi secunde.");
         {
             Console.WriteLine(@"40. Viteza unui automobil este de v km/h. Scrieti o functie prin care sa exprimaţi această viteză 
 în m/s.");
+            Console.Write("v=");
+            double v = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Viteza in m/s este {KmphToMps(v)}");
+        }
+
+        private static double KmphToMps(double v)
+        {
+            v = v * 5 / 18;
+            return v;
         }
 
         private static void Problema41()
