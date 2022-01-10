@@ -1373,6 +1373,19 @@ numere intregi.");
         private static void Problema54()
         {
             Console.WriteLine("54. Functia care determina raportul dintre elem pare si elem impare dintr-un vector.");
+            Console.WriteLine("Citeste vectorul:");
+            int[] v = new int[100];
+            string[] tokens = new string[100];
+            tokens = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int impare = 0,pare=0;
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                v[i] = int.Parse(tokens[i]);
+                if (v[i] % 2 == 1)
+                    impare++;
+                else pare++;
+            }
+            Console.WriteLine($"Raportul este {pare}/{impare}");
         }
 
         private static void Problema55()
