@@ -1006,6 +1006,23 @@ este minim.");
         {
             Console.WriteLine(@"37. Să se calculeze şi să se tipărească primii n termeni din şirul Fibonacci, şir definit de relaţia de 
 recurenta: f(n)=f(n-2)+f(n-1); f(1)=1, f(2)=1.");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            int a = 1, b = 1, c = 0;
+            if(n>=1)
+                Console.Write($"{a}");
+            if(n>=2)
+                Console.Write($" {b}");
+            int nr = 2;
+            while(nr<n)
+            {
+                c = a + b;
+                Console.Write($" {c}");
+                a = b;
+                b = c;
+                nr++;
+            }
+            Console.WriteLine();
         }
 
         private static void Problema38()
