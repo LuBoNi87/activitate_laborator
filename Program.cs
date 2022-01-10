@@ -989,6 +989,17 @@ este minim.");
             Console.WriteLine(@"36. 1. Scrie o metodă care primește ca parametru un număr natural x și apoi afișează: 
 -cifrele numărului (în ordine inversă)
 -suma cifrelor");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            int sumacifre = sumaCifre(n);
+            Console.Write("Cifrele numarului sunt:");
+            while(n>0)
+            {
+                Console.Write($" {n%10}");
+                n /= 10;
+            }
+            Console.WriteLine();
+            Console.WriteLine($"Suma cifrelor este {sumacifre}");
         }
 
         private static void Problema37()
