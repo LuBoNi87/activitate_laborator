@@ -748,16 +748,71 @@ repetate.");
         private static void Problema26()
         {
             Console.WriteLine(@"26. Să se afişeze toate numerele prime mai mici sau egale cu un numar m dat.");
+            Console.Write("m=");
+            int m = int.Parse(Console.ReadLine());
+            for (int i = 2; i <= m; i++)
+            {
+                bool prim = true;
+                for (int j = 2; j <= i / 2; j++)
+                    if (i % j == 0)
+                        prim = false;
+                if(prim)
+                    Console.Write($"{i} ");
+            }
         }
 
         private static void Problema27()
         {
             Console.WriteLine(@"27. Să se afişeze primele n numere prime care au suma cifrelor ≤m.");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("m=");
+            int m = int.Parse(Console.ReadLine());
+            int nr = 0;
+            int i = 2;
+            while(nr<n)
+            {
+                if(sumaCifre(i)<=m)
+                {
+                    if(prim(i))
+                    {
+                        nr++;
+                        Console.Write($"{i} ");
+                    }
+                }
+                i++;
+            }
+        }
+
+        private static bool prim(int n)
+        {
+            bool prim = true;
+            for(int i=2; i<=n/2; i++)
+            {
+                if (n % i == 0)
+                {
+                    prim = false;
+                    break;
+                }
+            }
+            return prim;
+        }
+
+        private static int sumaCifre(int n)
+        {
+            int sum = 0;
+            while (n>0)
+            {
+                sum += n % 10;
+                n /= 10;
+            }
+                return sum;
         }
 
         private static void Problema28()
         {
             Console.WriteLine(@"28. Să se afişeze toate numerele de 3 cifre care, citite invers, sunt tot numere prime.");
+
         }
 
         private static void Problema29()
