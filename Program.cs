@@ -897,11 +897,34 @@ p<10 în baza 10.");
         private static void Problema32()
         {
             Console.WriteLine(@"32. Să se afişeze primele n numere prime care au suma cifrelor mai mică sau egală cu m.");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("m=");
+            int m = int.Parse(Console.ReadLine());
+            int nr = 0;
+            int i = 2;
+            while (nr < n)
+            {
+                if (sumaCifre(i) <= m)
+                {
+                    if (prim(i))
+                    {
+                        nr++;
+                        Console.Write($"{i} ");
+                    }
+                }
+                i++;
+            }
         }
         
         private static void Problema33()
         {
             Console.WriteLine(@"33. Să se afişeze toate numerele prime de 3 cifre care citite invers sunt tot numere prime.");
+            for (int i = 101; i <= 997; i = i + 2)
+            {
+                if (prim(i) && prim(invers(i)))
+                    Console.Write($"{i} ");
+            }
         }
 
         private static void Problema34()
