@@ -883,7 +883,7 @@ p<10 în baza 10.");
             Console.WriteLine(@"31. Să se genereze toate numerele prime mai mici decât numărul natural n dat.");
             Console.Write("n=");
             int n = int.Parse(Console.ReadLine());
-            for (int i = 2; i <= m; i++)
+            for (int i = 2; i <= n; i++)
             {
                 bool prim = true;
                 for (int j = 2; j <= i / 2; j++)
@@ -931,6 +931,28 @@ p<10 în baza 10.");
         {
             Console.WriteLine(@"34. Scrieţi o funcţie care să transforme un unghi exprimat în radiani în valoarea sa exprimată în 
 grade şi una care să facă transformarea inversă.");
+            Console.Write("n=");
+            double n = int.Parse(Console.ReadLine());
+            Console.Write("g(grade) sau r(radiani)=");
+            string m = Console.ReadLine();
+            if (m == "g")
+                n = FromGradeToRadiani(n);
+            else if (m == "r")
+                n = FromRadianiToGrade(n);
+            else Console.WriteLine("Eroare");
+            Console.WriteLine($"{n}");
+        }
+
+        private static double FromRadianiToGrade(double n)
+        {
+            n = n * 180 / Math.PI;
+            return n;
+        }
+
+        private static double FromGradeToRadiani(double n)
+        {
+            n = n * Math.PI / 180;
+            return n;
         }
 
         private static void Problema35()
