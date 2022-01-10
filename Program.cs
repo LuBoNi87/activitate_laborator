@@ -1392,6 +1392,18 @@ numere intregi.");
         {
             Console.WriteLine(@"55. Fie X un vector cu n componente numere întregi. Să se calculeze expresia:
 e=x1-x2+x3-x4+….±xn.");
+            Console.WriteLine("Citeste vectorul:");
+            int[] v = new int[100];
+            string[] tokens = new string[100];
+            tokens = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int sum = 0, semn = 1;
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                v[i] = int.Parse(tokens[i]);
+                sum += v[i] * semn;
+                semn *= -1;
+            }
+            Console.WriteLine($"Expresia este {sum}");
         }
 
         private static void Problema56()
