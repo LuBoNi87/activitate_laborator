@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Media;
+using System.Numerics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -396,18 +397,18 @@ suma divizorilor numărului y.Să se găsească numerele ""prietene"" din interv
         {
             Console.WriteLine(@"7. Fie n,k. Să se scrie un algoritm pentru calculul numărului combinărilor de n elemente luate câte k");
             Console.Write("n=");
-            int n = int.Parse(Console.ReadLine());
+            ulong n = ulong.Parse(Console.ReadLine());
             Console.Write("k=");
-            int k = int.Parse(Console.ReadLine());
-            int comb = 0;
+            ulong k = ulong.Parse(Console.ReadLine());
+            ulong comb = 0;
             comb = fact(n)/(fact(k)*fact(n-k));
             Console.WriteLine($"Exista {comb} combinari ne {n} elemente luate cate {k}");
         }
 
-        private static int fact(int n)
+        private static ulong fact(ulong n)
         {
-            int rez = 1;
-            for (int i = 1; i <= n; i++)
+            ulong rez = 1;
+            for (ulong i = 1; i <= n; i++)
             {
                 rez *= i;
             }
@@ -555,7 +556,7 @@ determine cel mai mic număr şi cel mai mare număr citit.");
         {
             Console.WriteLine(@"15. Scrieţi un program care să calculeze factorialul unui număr întreg n.");
             Console.Write("n=");
-            int n = int.Parse(Console.ReadLine());
+            ulong n = ulong.Parse(Console.ReadLine());
             Console.WriteLine($"{fact(n)}");
         }
 
@@ -1028,12 +1029,57 @@ recurenta: f(n)=f(n-2)+f(n-1); f(1)=1, f(2)=1.");
         private static void Problema38()
         {
             Console.WriteLine(@"38. Scrieţi o functie care să calculeze factorialul unui număr întreg n.");
+            Console.Write("n=");
+            ulong n = ulong.Parse(Console.ReadLine());
+            BigInteger big=0;
+            Console.WriteLine($"{BigFact(n)}");
+        }
+
+        private static object BigFact(BigInteger n)
+        {
+            BigInteger big = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                big = big * i;
+            }
+            return big;
         }
 
         private static void Problema39()
         {
             Console.WriteLine(@"39. Scrieţi o funcţie care să determine diferenţa dintre două momente de timp, date prin ore, 
 minute şi secunde.");
+            Console.Write("data1=");
+            string[] data1 = Console.ReadLine().Split();
+            Console.Write("data2=");
+            string[] data2 = Console.ReadLine().Split();
+            int[] date1 = new int[3];
+            int[] date2 = new int[3];
+            int[] date3 = new int[3];
+            for (int i = 0; i <= 2; i++)
+            {
+                date1[i] = int.Parse(data1[i]);
+                date2[i] = int.Parse(data2[i]);
+            }
+            for (int i = 2; i >= 0; i--)
+            {
+                if (i > 0)
+                { if (date1[i] < date2[i])
+                    {
+                        date3[i] = date1[i] + 60 - date2[i];
+                        date1[i - 1]--;
+                    }
+                    else
+                        date3[i] = date1[i]  -date2[i];
+                }
+                else if (i == 0)
+                    date3[i] = date1[i] - date2[i];
+            }
+            if(date3[0]<0)
+                Console.WriteLine("date gresite");
+            else
+                    Console.Write($"{date3[0]} ore {date3[1]} minute {date3[2]} secunde");
+            Console.WriteLine();
         }
 
         private static void Problema40()
