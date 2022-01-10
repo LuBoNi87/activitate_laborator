@@ -1137,12 +1137,40 @@ De exemplu introduceți lungimea tabloului: 5.
 Introduceți elementele tabloului: 9 10 20 8 7
 Tabloul inițial este: 9 10 20 8 7
 Pătratul elementelor tabloului inițial este: 81 100 400 64 49");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            int[] v = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+                v[i] = v[i] * v[i];
+            }
+            foreach (var item in v)
+            {
+                Console.WriteLine($"{item} ");
+            }
         }
 
         private static void Problema44()
         {
             Console.WriteLine(@"44. Să se scrie o functie pentru aflarea tablei inmulțirii unui număr utilizând bucla for și 
 reprezentați-o în formatul corespunzător.");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write($"  ");
+            for (int i = 0; i <= 10; i++)
+            {
+                Console.Write($"{i} ");
+                if (i * n >= 10)
+                    Console.Write(" ");
+            }
+            Console.WriteLine();
+            Console.Write($"{n} ");
+            for (int i = 0; i <= 10; i++)
+            {
+                Console.Write($"{i*n} ");
+            }
+            Console.WriteLine();
         }
 
         private static void Problema45()
