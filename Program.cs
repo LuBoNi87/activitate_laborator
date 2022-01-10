@@ -1176,6 +1176,18 @@ reprezentați-o în formatul corespunzător.");
         private static void Problema45()
         {
             Console.WriteLine(@"45. Să se scrie o funcție care inversează elementele memorate într-un tablou.");
+            Console.WriteLine("elementele tabloului:");
+            string[] tokens = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int[] v = new int[tokens.Length];
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                v[i] = int.Parse(tokens[i]);
+                v[i] = invers(v[i]);
+            }
+            foreach (var item in v)
+            {
+                Console.Write($"{item} ");
+            }
         }
 
         private static void Problema46()
@@ -1185,6 +1197,19 @@ De exemplu, fiecare dintre următoarele numere întregi formate din cinci cifre 
 palindrom: 12321, 55555, 45554 și 11611. Să se scrie o functie care primeste un număr și 
 verifică dacă este palindrom sau nu. (Utilizați operatorii de împărțit și rest pentru a separa 
 numărul în cifre individuale.).");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            int cn = n;
+            int o = 0;
+            while (n > 0)
+            {
+                o = o * 10 + n % 10;
+                n /= 10;
+            }
+            if (o == cn)
+                Console.WriteLine("Numarul este palindrom");
+            else
+                Console.WriteLine("Numarul nu este palindrom");
         }
 
         private static void Problema47()
