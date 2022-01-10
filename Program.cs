@@ -846,6 +846,36 @@ repetate.");
         {
             Console.WriteLine(@"30. Să se transforme un număr din baza 10 în baza p<10. Să se transforme un număr din baza 
 p<10 în baza 10.");
+            Console.Write("n: ");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write(@"Baza numarului ""n"": ");
+            int baza = int.Parse(Console.ReadLine());
+            Console.Write(@"Baza ""p"" in care transformi nr ""n"": ");
+            int p = int.Parse(Console.ReadLine());
+            int cifra, nr = 0;
+            if (baza == 10)
+            {
+                int x = 1;
+                while (n > 0)
+                {
+                    cifra = n % p;
+                    n /= p;
+                    nr += cifra * x;
+                    x *= 10;
+                }
+            }
+            else if (baza < 10)
+            {
+                int x = 1;
+                while(n>0)
+                {
+                    cifra = (n % 10) * x;
+                    nr += cifra;
+                    n /= 10;
+                    x *= baza;
+                }
+            }
+            Console.WriteLine($"{nr}");
         }
 
         private static void Problema31()
