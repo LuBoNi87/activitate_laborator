@@ -1274,11 +1274,42 @@ numărul în cifre individuale.).");
         {
             Console.WriteLine(@"49. Sa se scrie o functie care calculeaza media aritmetica a elementelor pare dintr-un vector de 
 numere intregi.");
-        }
+            Console.WriteLine("Citeste vectorul:");
+            int[] v = new int[100];
+            string[] tokens = new string[100];
+            tokens = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            double sum = 0, nr = 0;
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                v[i] = int.Parse(tokens[i]);
+                if(v[i]%2==0)
+                {
+                    sum += v[i];
+                    nr++;
+                }
+            }
+            Console.WriteLine($"{sum/nr}");
+            }
 
-        private static void Problema50()
+            private static void Problema50()
         {
             Console.WriteLine(@"50. Functia care determina daca un vector dat e ordonat crescator.");
+            Console.WriteLine("Citeste vectorul:");
+            int[] v = new int[100];
+            string[] tokens = new string[100];
+            tokens = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            bool ascending = true;
+            v[0]= int.Parse(tokens[0]);
+            for (int i = 1; i < tokens.Length; i++)
+            {
+                v[i] = int.Parse(tokens[i]);
+                if (v[i] < v[i - 1])
+                    ascending = false;
+            }
+            if(ascending)
+                Console.WriteLine("Vectorul este crescator");
+            else
+                Console.WriteLine("Vectorul nu este crescator");
         }
 
         private static void Problema51()
