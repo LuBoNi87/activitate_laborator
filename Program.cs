@@ -960,6 +960,28 @@ grade şi una care să facă transformarea inversă.");
             Console.WriteLine(@"35. Scrieti o functie cu numele putere care primeste prin parametrul n un numar natural cu cel mult 
 9 cifre si care furnizeaza prin parametrii x si k doua numere naturale cu proprietatea ca n=xk si x 
 este minim.");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            int x=1, k=1;
+            putere(n, ref x, ref k);
+            Console.WriteLine($"{x} ^ {k}");
+        }
+
+        private static void putere(int n, ref int x, ref int k)
+        {
+            for (int i = 2; i <= n; i++)
+            {
+                int nr = i;
+                k = 1; 
+                x = i;
+                while(nr<n)
+                {
+                    k++;
+                    nr *= i;
+                }
+                if (nr == n)
+                    break;
+            }
         }
 
         private static void Problema36()
