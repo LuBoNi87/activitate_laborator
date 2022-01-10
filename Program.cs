@@ -1332,11 +1332,42 @@ numere intregi.");
         private static void Problema52()
         {
             Console.WriteLine(@"52. Functia care determina daca un vector dat are numai elem impare.");
+            Console.WriteLine("Citeste vectorul:");
+            int[] v = new int[100];
+            string[] tokens = new string[100];
+            tokens = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            bool impare = true;
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                v[i] = int.Parse(tokens[i]);
+                if (v[i] % 2 != 1)
+                    impare = false;
+            }
+            if (impare)
+                Console.WriteLine("Vectorul are doar elemente impare");
+            else
+                Console.WriteLine("Vectorul nu are doar elemente impare");
         }
 
         private static void Problema53()
         {
             Console.WriteLine(@"53. Functia care determina daca un vector dat are numai elem pare.");
+            Console.WriteLine("Citeste vectorul:");
+            int[] v = new int[100];
+            string[] tokens = new string[100];
+            tokens = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            bool pare = true;
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                v[i] = int.Parse(tokens[i]);
+                if (v[i] % 2 == 1)
+                    pare = false;
+            }
+            if (pare)
+                Console.WriteLine("Vectorul are doar elemente pare");
+            else
+                Console.WriteLine("Vectorul nu are doar elemente pare");
+
         }
 
         private static void Problema54()
