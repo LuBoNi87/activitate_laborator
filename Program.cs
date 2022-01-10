@@ -1291,7 +1291,7 @@ numere intregi.");
             Console.WriteLine($"{sum/nr}");
             }
 
-            private static void Problema50()
+        private static void Problema50()
         {
             Console.WriteLine(@"50. Functia care determina daca un vector dat e ordonat crescator.");
             Console.WriteLine("Citeste vectorul:");
@@ -1315,6 +1315,18 @@ numere intregi.");
         private static void Problema51()
         {
             Console.WriteLine(@"51. Functia care determina minimul unui vector dat.");
+            Console.WriteLine("Citeste vectorul:");
+            int[] v = new int[100];
+            string[] tokens = new string[100];
+            tokens = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int minim = 10000;
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                v[i] = int.Parse(tokens[i]);
+                if (v[i] < minim)
+                    minim=v[i];
+            }
+            Console.WriteLine($"Mninimul vectorului este {minim}");
         }
 
         private static void Problema52()
