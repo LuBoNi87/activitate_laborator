@@ -1215,11 +1215,59 @@ numărul în cifre individuale.).");
         private static void Problema47()
         {
             Console.WriteLine(@"47. Să se scrie un program care memorează 100 de numere aleatoare cuprinse între 0 și 99 întrun tablou și care afișează numerele care se repetă în tablou");
+            int[] rand = new int[100];
+            int[] freq = new int[100];
+            Random rnd = new Random();
+            for (int i = 0; i < 100; i++)
+            {
+                rand[i] = rnd.Next(0, 99);
+                freq[rand[i]]++;
+            }
+            for (int i = 0; i < 100; i++)
+            {
+                if(freq[i]>1)
+                    Console.Write($"{i} ");
+            }
+            Console.WriteLine();
         }
 
         private static void Problema48()
         {
             Console.WriteLine(@"48. Să se scrie un program care adună două matrici de dimensiune nxn.");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            int[][] a = new int[n][];
+            int[][] b = new int[n][];
+            Console.WriteLine("Citeste prima matrice");
+            string[] tokens = new string[n];
+            for (int i = 0; i < n; i++)
+            {
+                tokens = Console.ReadLine().Split(new[] { ' ' },StringSplitOptions.RemoveEmptyEntries);
+                a[i] = new int[n];
+                for (int j = 0; j < tokens.Length; j++)
+                {
+                    a[i][j] = int.Parse(tokens[j]);
+                }
+            }
+            Console.WriteLine("Citeste a doua matrice");
+            for (int i = 0; i < n; i++)
+            {
+                tokens = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                b[i] = new int[n];
+                for (int j = 0; j < tokens.Length; j++)
+                {
+                    b[i][j] = int.Parse(tokens[j])+a[i][j];
+                }
+            }
+            Console.WriteLine("Matricile adunate");
+            for (int i = 0; i < n; i++)
+            {
+                foreach (var item in b[i])
+                {
+                    Console.Write($"{item} ");
+                }
+                Console.WriteLine();
+            }
         }
 
         private static void Problema49()
