@@ -610,7 +610,7 @@ sau 2 se va produce un sunet în difuzor.");
                 Console.WriteLine($"Media geometrica este {Math.Sqrt(a*b)}");
         }
 
-            private static void Problema19()
+        private static void Problema19()
         {
             Console.WriteLine(@"19. Să se scrie un program care să citească trei numere reale a, b şi c, apoi să pună o întrebare de 
 genul: Ce doriţi să calculăm? Aria sau perimetrul?. Dacă se va răspunde prin ‘aria’ atunci se 
@@ -812,12 +812,34 @@ repetate.");
         private static void Problema28()
         {
             Console.WriteLine(@"28. Să se afişeze toate numerele de 3 cifre care, citite invers, sunt tot numere prime.");
+            for(int i=101; i<=997; i=i+2)
+            {
+                if(prim(i) && prim(invers(i)))
+                    Console.Write($"{i} ");
+            }
+        }
 
+        private static int invers(int n)
+        {
+            int inv=0;
+            while(n>0)
+            {
+                inv = inv * 10 + n % 10;
+                n /= 10;
+            }
+            return inv;
         }
 
         private static void Problema29()
         {
             Console.WriteLine(@"29. Să se listeze toate numerele ≤n, a căror sumă a cifrelor este divizibilă prin 5.");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            for (int i = 1; i <= n; i++)
+            {
+                if(sumaCifre(i)%5==0)
+                    Console.Write($"{i} ");
+            }
         }
 
         private static void Problema30()
