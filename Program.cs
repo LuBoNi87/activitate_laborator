@@ -881,6 +881,17 @@ p<10 în baza 10.");
         private static void Problema31()
         {
             Console.WriteLine(@"31. Să se genereze toate numerele prime mai mici decât numărul natural n dat.");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            for (int i = 2; i <= m; i++)
+            {
+                bool prim = true;
+                for (int j = 2; j <= i / 2; j++)
+                    if (i % j == 0)
+                        prim = false;
+                if (prim)
+                    Console.Write($"{i} ");
+            }
         }
 
         private static void Problema32()
