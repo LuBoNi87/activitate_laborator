@@ -1465,6 +1465,29 @@ Determinați poziția ultimului element din vector cu proprietatea că este egal
 determina ultimul element cu o anumită proprietate, se parcurge vectorul de la dreapta spre 
 stânga (în ordinea descrescătoare a indicilor până când găsim primul element cu proprietatea 
 cerută sau până când epuizăm elementele vectorului).");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("k=");
+            int k = int.Parse(Console.ReadLine());
+            int[] v = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+            }
+            bool found = false;
+            int poz = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if (v[i] == k)
+                {
+                    found = true;
+                    poz = i;
+                }
+            }
+
+            if (!found)
+                Console.WriteLine("Nu exista astfel de numar");
+            else Console.WriteLine($"Numarul se afla pe pozitia {poz}");
         }
 
         private static void Problema59()
@@ -1475,6 +1498,23 @@ observă că primele poz-1 elemente rămân neschimbate, în timp ce elementele 
 poz+1, poz+2,…….,n se deplasează cu o poziţie spre stânga pentru a “umple” golul rămas 
 prin eliminarea elementului din poziţia poz. Evident, dimensiunea vectorului scade cu o 
 unitate).");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("poz=");
+            int poz = int.Parse(Console.ReadLine());
+            int[] v = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+            }
+            for (int i = poz; i < n-1; i++)
+            {
+                v[i] = v[i + 1];
+            }
+            for (int i = 0; i < n-1; i++)
+            {
+                Console.Write($"{v[i]} ");
+            }
         }
 
         private static void Problema60()
