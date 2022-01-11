@@ -1558,6 +1558,28 @@ elementele vectorului).");
 întregi. Inserați elementul x în vector pe poziția k. (elementele din poziţiile k, k+1,.......n 
 trebuie să se deplaseze cu o poziţie spre dreapta pentru a face loc noii valori x introduse în 
 poziţia k;dimensiunea vectorului creşte cu o unitate).");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("k=");
+            int k = int.Parse(Console.ReadLine());
+            Console.Write("x=");
+            int x = int.Parse(Console.ReadLine());
+            int[] v = new int[n+1];
+            int nrk = 0;
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+            }
+            for (int i = n-1; i > k; i--)
+            {
+                v[i] = v[i - 1];
+            }
+            v[k] = x;
+            for (int i = 0; i < n - nrk; i++)
+            {
+                Console.Write($"{v[i]} ");
+            }
+            Console.WriteLine();
         }
 
         private static void Problema62()
