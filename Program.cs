@@ -1797,6 +1797,32 @@ Ajutați pe CRB să determine câte elemente din șir respectă această regulă
         {
             Console.WriteLine(@"68. Se citește un șir cu n numere naturale. Să se verifice dacă prin rearajarea elementelor șirului se 
 poate obține un șir palindrom.");
+            Console.WriteLine("citeste vectorul:");
+            List<int> v = new List<int>();
+            string[] tokens = new string[100];
+            tokens = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int[] freq = new int[10000];
+            int max = 0;
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                v.Add(int.Parse(tokens[i]));
+                freq[v[i]]++;
+                if (v[i] > max)
+                    max = v[i];
+            }
+            int freq_impare = 0;
+            bool palindrom = true;
+            for (int i = 0; i <= max; i++)
+            {
+                if (freq[i] % 2 == 1)
+                    freq_impare++;
+                if (freq_impare > 1)
+                    palindrom = false;
+            }
+            if(palindrom)
+                Console.WriteLine("Sirul poate fi palindrom");
+            else
+                Console.WriteLine("Sirul nu poate fi palindrom");
         }
 
         private static void Problema69()
