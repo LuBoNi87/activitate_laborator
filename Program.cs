@@ -1698,6 +1698,28 @@ pare la început. Exemplu: Date de intrare: n=4 și numerele: 3, 4, 6, 5 Date de
         {
             Console.WriteLine(@"65. Se dă un şir cu n elemente, numere naturale. Să se afişeze, în ordine crescătoare, toate valorile 
 distincte care se pot obţine ca sumă de două elemente distincte din şir.");
+            Console.WriteLine("citeste vectorul:");
+            List<int> v = new List<int>();
+            List<int> x = new List<int>();
+            string[] tokens = new string[100];
+            tokens = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int[] freq = new int[100000];
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                v.Add(int.Parse(tokens[i]));
+                freq[v[i]]++;
+                if (freq[v[i]] == 1)
+                    x.Add(v[i]);
+            }
+            x.Sort();
+            for (int i = 0; i < x.Count-1; i++)
+            {
+                for (int j = i+1; j < x.Count; j++)
+                {
+                    Console.Write($"{x[i]+x[j]} ");
+                }
+            }
+            Console.WriteLine();
         }
 
         private static void Problema66()
@@ -1705,6 +1727,31 @@ distincte care se pot obţine ca sumă de două elemente distincte din şir.");
             Console.WriteLine(@"66. CRB are un șir cu n numere naturale diferite. Nu știe ce să facă cu ele și le aranjează în ordine 
 descrescătoare. Apoi observă că anumite numere se află pe aceeași poziție ca în șirul inițial. 
 Ajutați pe CRB să determine câte elemente din șir respectă această regulă.");
+            Console.WriteLine("citeste vectorul:");
+            List<int> v = new List<int>();
+            List<int> u = new List<int>();
+            string[] tokens = new string[100];
+            tokens = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                v.Add(int.Parse(tokens[i]));
+                u.Add(int.Parse(tokens[i]));
+            }
+            u.Sort();
+            u.Reverse();
+            int nr = 0;
+            for (int i = 0; i < v.Count; i++)
+            {
+                if (v[i] == u[i])
+                    nr++;
+            }
+            Console.WriteLine();
+            for (int i = 0; i < u.Count; i++)
+            {
+                Console.Write($"{u[i]} ");
+            }
+            Console.WriteLine();
+            Console.WriteLine($"{nr} numere se afla pe aceeasi pozitie");
         }
 
         private static void Problema67()
