@@ -1433,6 +1433,29 @@ primului element din vector cu proprietatea că este medie aritmetică între su
 predecesorul său. (Pentru a determina primul element (de indice minim) cu o anumită 
 proprietate, se parcurge vectorul de la stânga la dreapta până când găsim primul element cu 
 proprietatea cerută sau până când epuizăm elementele vectorului).");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            int[] v = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+            }
+            bool found = false;
+            int poz = 0;
+            for (int i = 1; i < n-1; i++)
+            {
+                if(v[i]==((float)v[i-1]+v[i+1])/2)
+                {
+                    found = true;
+                    poz = i;
+                }
+                if (found)
+                    break;
+            }
+
+            if(!found)
+                Console.WriteLine("Nu exista astfel de numar");
+            else Console.WriteLine($"Numarul se afla pe pozitia {poz}");
         }
 
         private static void Problema58()
