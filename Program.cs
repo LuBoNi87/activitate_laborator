@@ -1758,6 +1758,39 @@ Ajutați pe CRB să determine câte elemente din șir respectă această regulă
         {
             Console.WriteLine(@"67. Să se scrie un program care ordonează crescător elementele din prima jumătate a unui vector 
 și descrescător elementele din a doua jumătate. ");
+            Console.WriteLine("citeste vectorul:");
+            List<int> v = new List<int>();
+            string[] tokens = new string[100];
+            tokens = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                v.Add(int.Parse(tokens[i]));
+            }
+            for (int i = 0; i < v.Count / 2 - 1; i++)
+            {
+                for (int j = i + 1; j < v.Count / 2; j++)
+                    if (v[i] > v[j])
+                    {
+                        int temp = v[i];
+                        v[i] = v[j];
+                        v[j] = temp;
+                    }
+            }
+            for (int i = v.Count/2; i < v.Count - 1; i++)
+            {
+                for (int j = i + 1; j < v.Count; j++)
+                    if (v[i] < v[j])
+                    {
+                        int temp = v[i];
+                        v[i] = v[j];
+                        v[j] = temp;
+                    }
+            }
+            foreach (var item in v)
+            {
+                Console.Write($"{item} ");
+            }
+            Console.WriteLine();
         }
 
         private static void Problema68()
