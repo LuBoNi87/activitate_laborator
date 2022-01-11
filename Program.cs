@@ -1829,6 +1829,36 @@ poate obține un șir palindrom.");
         {
             Console.WriteLine(@"69. Se dau înălțimile a n copii, numerotați de la 1 la n, exprimate prin numere naturale. Afișați 
 numerele de ordine ale copiilor în ordinea crescătoare a înălțimii lor.");
+            Console.WriteLine("citeste vectorul:");
+            List<int> v = new List<int>();
+            List<int> nrordine = new List<int>();
+            string[] tokens = new string[100];
+            tokens = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                v.Add(int.Parse(tokens[i]));
+                nrordine.Add(i+1);
+            }
+            for (int i = 0; i < v.Count - 1; i++)
+            {
+                for (int j = i+1; j < v.Count; j++)
+                {
+                    if(v[i]>v[j])
+                    {
+                        int temp = v[i];
+                        v[i] = v[j];
+                        v[j] = temp;
+                        temp = nrordine[i];
+                        nrordine[i] = nrordine[j];
+                        nrordine[j] = temp;
+                    }
+                }
+            }
+            for (int i = 0; i < nrordine.Count; i++)
+            {
+                Console.Write($"{nrordine[i]} ");
+            }
+            Console.WriteLine();
         }
     }
 }
