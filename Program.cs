@@ -1411,6 +1411,19 @@ e=x1-x2+x3-x4+….±xn.");
             Console.WriteLine(@"56. Să se construiască un vector v cu primii termeni ai şirului lui Fibonacci. Şirul are primii
 doi termeni egali cu 1 şi fiecare din termenii următori este egal cu suma dintre termenul
 precedent şi termenul anteprecedent.");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            int[] v = new int[n];
+            v[0] = 1;
+            v[1] = 1;
+            for (int i = 2; i < n; i++)
+            {
+                v[i] = v[i - 1] + v[i - 2];
+            }
+            foreach (var item in v)
+            {
+                Console.Write($"{item} ");
+            }
         }
 
         private static void Problema57()
