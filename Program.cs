@@ -1586,6 +1586,31 @@ poziţia k;dimensiunea vectorului creşte cu o unitate).");
             Console.WriteLine(@"62. Se citesc de la tastatură n, un număr natural mai mic decât 100 și cele n elemente reale ale 
 unui vector. Se cere să se insereze între oricare două elemente ale vectorului media lor 
 aritmetică.");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            float[] v = new float[200];
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+            }
+            int nrad = 0;
+            float ma=0;
+            for (int i = 0; i < n + nrad - 1; i++)
+            {
+                ma = (v[i] + v[i + 1]) / 2;
+                nrad++;
+                i++;
+                for (int j = n+nrad; j > i; j--)
+                {
+                    v[j] = v[j - 1];
+                }
+                v[i] = ma;
+            }
+            for (int i = 0; i < n + nrad; i++)
+            {
+                Console.Write($"{v[i]} ");
+            }
+            Console.WriteLine();
         }
 
         private static void Problema63()
