@@ -1657,6 +1657,41 @@ v[]={17, 23, 47}, atunci vectorul u va fi {17, 47}.");
         {
             Console.WriteLine(@"64. Se dau n, un număr natural și n numere întregi. Folosind un alt vector, să se aşeze numerele 
 pare la început. Exemplu: Date de intrare: n=4 și numerele: 3, 4, 6, 5 Date de ieşire: 4 6 3 5.");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            int[] v = new int[n];
+            int[] u = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+            }
+            int nrel = 0;
+            for (int i = 0; i < n - nrel; i++)
+            {
+                if (v[i] % 2 == 0)
+                {
+                    u[nrel] = v[i];
+                    nrel++;
+                    for (int j = i; j < n - nrel; j++)
+                    {
+                        v[j] = v[j + 1];
+                    }
+                    i--;
+                }
+            }
+            for (int i = 0; i < nrel; i++)
+            {
+                for (int j = n-1; j > i; j--)
+                {
+                    v[j] = v[j - 1];
+                }
+                v[i] = u[i];
+            }
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write($"{v[i]} ");
+            }
+            Console.WriteLine();
         }
 
         private static void Problema65()
