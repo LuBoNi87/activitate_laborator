@@ -1618,6 +1618,39 @@ aritmetică.");
             Console.WriteLine(@"63. Să se extragă dintr-un vector elementele care au ultima cifră egală cu k şi să se formeze cu 
 ele un alt vector. Să se afişeze cei doi vectori, unul sub altul. Exemplu: dacă se dau n=3, k=7, 
 v[]={17, 23, 47}, atunci vectorul u va fi {17, 47}.");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("k=");
+            int k = int.Parse(Console.ReadLine());
+            float[] v = new float[n];
+            float[] u = new float[n];
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+            }
+            int nrel = 0;
+            for (int i = 0; i < n-nrel; i++)
+            {
+                if (v[i] % 10 == k)
+                {
+                    u[nrel] = v[i];
+                    nrel++;
+                    for (int j = i; j < n - nrel; j++)
+                    {
+                        v[j] = v[j + 1];
+                    }
+                }
+            }
+            for (int i = 0; i < n-nrel; i++)
+            {
+                Console.Write($"{v[i]} ");
+            }
+            Console.WriteLine();
+            for (int i = 0; i < nrel; i++)
+            {
+                Console.Write($"{u[i]} ");
+            }
+            Console.WriteLine();
         }
 
         private static void Problema64()
