@@ -1565,17 +1565,16 @@ poziţia k;dimensiunea vectorului creşte cu o unitate).");
             Console.Write("x=");
             int x = int.Parse(Console.ReadLine());
             int[] v = new int[n+1];
-            int nrk = 0;
             for (int i = 0; i < n; i++)
             {
                 v[i] = int.Parse(Console.ReadLine());
             }
-            for (int i = n-1; i > k; i--)
+            for (int i = n; i > k; i--)
             {
                 v[i] = v[i - 1];
             }
             v[k] = x;
-            for (int i = 0; i < n - nrk; i++)
+            for (int i = 0; i < n+1; i++)
             {
                 Console.Write($"{v[i]} ");
             }
