@@ -1524,6 +1524,32 @@ Eliminați din vector toate elementele egale cu k. (Pentru a determina ultimul e
 anumită proprietate, se parcurge vectorul de la dreapta spre stânga (în ordinea descrescătoare 
 a indicilor până când găsim primul element cu proprietatea cerută sau până când epuizăm 
 elementele vectorului).");
+            Console.Write("n=");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("k=");
+            int k = int.Parse(Console.ReadLine());
+            int[] v = new int[n];
+            int nrk = 0;
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+            }
+            for (int i = 0; i <= n-nrk; i++)
+            {
+                if (v[i] == k)
+                {
+                    nrk++;
+                    for (int j = i; j < n - nrk - 1; j++)
+                    {
+                        v[j] = v[j + 1];
+                    }
+                }
+            }
+            for (int i = 0; i < n - nrk; i++)
+            {
+                Console.Write($"{v[i]} ");
+            }
+            Console.WriteLine();
         }
 
         private static void Problema61()
